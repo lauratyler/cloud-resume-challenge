@@ -1,12 +1,16 @@
 {
   "name": "resume-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "laura tyler portfolio",
+  "author": "Laura Tyler <laurabtyler22@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
   "devDependencies": {
     "typescript": "^5.5.3"
   },

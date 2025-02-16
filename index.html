@@ -14,7 +14,12 @@
                 --name-color: #F25C54; /* Coral red */
                 --text-color: #333333; /* Deep charcoal */
                 --accent-color: #8BC6EC; /* Light teal */
-                --contact-font-size: 18px;
+                --accent-background: #B5EAEA; /* Muted teal */
+                --accent-background-2: #E8B4B8; /* Dusty rose */
+                --accent-background-3: #2A2D34; /* Deep Navy */
+                --contact-font-size: 1vh;
+                --default-font-size: 1.5vh;
+                --section-title-size: 2vh;
                 --header-font: "Dancing Script";
             }
 
@@ -36,32 +41,41 @@
 
             .name {
                 font-family: var(--header-font), serif;
-                font-size: 3.5rem;
+                font-size: 3.5vh;
                 color: var(--name-color);
                 justify-content: center;
                 display: flex;
                 flex-direction: row;
-                margin-bottom: 2px;
-                margin-top: 0;
+                margin-bottom: 1vb;
+                margin-top: 1vb;
             }
 
             .tagline {
                 font-family: var(--header-font), serif;
-                font-size: 1.5rem;
+                font-weight: normal;
+                font-size: 2.75vh;
                 color: var(--name-color);
                 justify-content: center;
                 display: flex;
                 flex-direction: row;
                 margin-bottom: 2px;
                 margin-top: 2px;
+                flex-wrap: wrap;
+            }
+
+            span.line {
+                display: inline-block;
             }
 
             .contact-list {
                 font-size: var(--contact-font-size);
                 text-align: center;
                 color: var(--text-color);
-                margin-bottom: 2px;
-                margin-top: 2px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                margin: 2px auto 2px auto;
+                width: 25%;
             }
 
             .full-content {
@@ -85,9 +99,9 @@
                         radial-gradient(var(--R) at left 50% top calc(-1*var(--p)),var(--_g)) 50% calc(50% + var(--size)/2 + var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b));
                 background: var(--accent-color);
                 height: 15px;
-                width: 100%;
-                max-width: 35vh;
-                margin: 2px auto;
+                width: 45vw;
+                max-width: 75vw;
+                margin: 1vb auto;
                 display: flex;
                 flex-direction: row;
             }
@@ -105,12 +119,16 @@
                 color: inherit;
             }
 
+            /*.about-me {*/
+            /*    background: var(--accent-background);*/
+            /*}*/
+
             .section-title {
                 color: var(--accent-color);
-                margin: 2px 5% 2px 5%;
+                margin: 1vb 3vb 1vb 7vb;
                 display: flex;
                 flex-direction: row;
-                font-size: 1.75rem;
+                font-size: var(--section-title-size);
             }
 
             .section-divider {
@@ -119,17 +137,19 @@
 
             .section-content {
                 margin: 3%;
-                margin-left: 7%;
+                margin-left: 10vb;
+                margin-right: 10vb;
                 color: var(--text-color);
-                font-size: 1.1rem;
+                font-size: var(--default-font-size);
             }
 
             ul {
-                margin-left: 3% !important;
+                margin-left: 7vb !important;
+                margin-right: 7vb !important;
             }
 
             li {
-                margin-bottom: 4px;
+                margin-bottom: 1vh;
             }
 
             li::marker {
@@ -138,6 +158,7 @@
             }
 
             .footer {
+                /*background: var(--accent-background-2);*/
                 color: var(--text-color);
                 display: flex;
                 flex-direction: row;
@@ -145,7 +166,7 @@
             }
 
             .footer i {
-                font-size: 1rem;
+                font-size: var(--default-font-size);
             }
         </style>
     </head>
@@ -153,15 +174,20 @@
     <body>
         <div class="full-content">
             <h1 class="name">Laura Tyler</h1>
-            <h3 class="tagline">Bringing ideas to life, one line at a time</h3>
+            <h3 class="tagline">
+                <span class="line">Bringing ideas to life, </span>
+                <span class="line"> one line at a time</span>
+            </h3>
             <div class="wave-box"></div>
                 <div class="contact-list">
                     <a target="_blank" href="mailto:laurabtyler22@gmail.com"><i class="fa fa-envelope"></i></a>
                     <a target="_blank" href="https://linkedin.com/in/lauratyler22"><i class="fa fa-linkedin-square"></i></a>
                     <a target="_blank" href="https://github.com/lauratyler"><i class="fa fa-github"></i></a>
                 </div>
-            <h3 class="section-title">About Me</h3>
+            <div class="about-me">
+                <h3 class="section-title">About Me</h3>
                 <p class="section-content"> A self-taught developer with an unconventional background in psychology and business administration who emphasises the importance of understanding how business and technology work together.</p>
+            </div>
             <hr class="section-divider">
             <h3 class="section-title">Technical Skills</h3>
                 <ul class="section-content">

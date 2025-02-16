@@ -1,0 +1,36 @@
+name: Connect to AWS role and upload to S3
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  AWS_REGION : "us-east-2"
+  S3_BUCKET_NAME: "lauratyler.dev"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  UploadToS3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::997688109736:role/GithubAction
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Verify AWS authentication
+      - name: STS GetCallerIdentity
+        run: aws sts get-caller-identity
+
+      # Upload files to S3
+      - name: Upload files to S3
+        run: |
+          aws s3 sync . s3://${{ env.S3_BUCKET_NAME }} --exclude ".git/*" --delete
