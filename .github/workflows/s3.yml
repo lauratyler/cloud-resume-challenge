@@ -22,9 +22,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
-          role-to-assume: ${{ secrets.CLOUD_CHALLENGE_AWS_ROLE_ARN }}
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ env.AWS_REGION }}
 
       # Verify AWS authentication
       - name: STS GetCallerIdentity
@@ -33,19 +33,11 @@ jobs:
       - name: Retrieve secrets
         id: get_secrets
         run: |
-          # Retrieve the secrets as JSON
-          CLOUD_CHALLENGE_AWS_ROLE_ARN=$(aws secretsmanager get-secret-value --secret-id CLOUD_CHALLENGE_AWS_ROLE_ARN --query SecretString --output text)
-          
-          # Retrieve the first secret as JSON
-          AWS_REGION=$(aws secretsmanager get-secret-value --secret-id AWS_REGION --query SecretString --output text)
-          
           # Retrieve the second secret as JSON
           CLOUD_CHALLENGE_BUCKET_NAME=$(aws secretsmanager get-secret-value --secret-id CLOUD_CHALLENGE_BUCKET_NAME --query SecretString --output text)
           
           # Set environment variables from the secret
-          echo "AWS_ROLE_ARN=$(echo $SECRET_JSON | jq -r '.CLOUD_CHALLENGE_AWS_ROLE_ARN')" >> $GITHUB_ENV
           echo "BUCKET_NAME=$(echo $SECRET_JSON | jq -r '.CLOUD_CHALLENGE_BUCKET_NAME')" >> $GITHUB_ENV
-          echo "AWS_REGION=$(echo $SECRET_JSON | jq -r '.AWS_REGION')" >> $GITHUB_ENV
 
       # Upload files to S3
       - name: Upload files to S3
