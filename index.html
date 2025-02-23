@@ -7,170 +7,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
         <link rel="icon" href="/src/assets/Laura.png">
+        <link rel="stylesheet" type="text/css" href="./css/main-page.css" media="screen"/>
         <title>Aura of Laura</title>
-        <style>
-            :root {
-                --bg-color: #FFFAE3; /* Soft cream */
-                --name-color: #F25C54; /* Coral red */
-                --text-color: #333333; /* Deep charcoal */
-                --accent-color: #8BC6EC; /* Light teal */
-                --accent-background: #B5EAEA; /* Muted teal */
-                --accent-background-2: #E8B4B8; /* Dusty rose */
-                --accent-background-3: #2A2D34; /* Deep Navy */
-                --contact-font-size: 1.5vh;
-                --default-font-size: 1.5vh;
-                --section-title-size: 2vh;
-                --header-font: "Dancing Script";
-            }
-
-            html {
-                width: 100%;
-                min-height: 100vh;
-                max-height: 100%;
-                background-color: var(--bg-color);
-            }
-
-            body {
-                min-height: 98vh;
-                font-family: Arial, sans-serif;
-                background-color: var(--bg-color);
-                display: flex;
-                flex-direction: column;
-                border: 5px dotted var(--accent-color);
-            }
-
-            .name {
-                font-family: var(--header-font), serif;
-                font-size: 3.5vh;
-                color: var(--name-color);
-                justify-content: center;
-                display: flex;
-                flex-direction: row;
-                margin-bottom: 1vb;
-                margin-top: 1vb;
-            }
-
-            .tagline {
-                font-family: var(--header-font), serif;
-                font-weight: normal;
-                font-size: 2.75vh;
-                color: var(--name-color);
-                justify-content: center;
-                display: flex;
-                flex-direction: row;
-                margin-bottom: 2px;
-                margin-top: 2px;
-                flex-wrap: wrap;
-            }
-
-            span.line {
-                display: inline-block;
-            }
-
-            .contact-list {
-                font-size: var(--contact-font-size);
-                text-align: center;
-                color: var(--text-color);
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                margin: 2px auto 2px auto;
-                width: 25%;
-            }
-
-            .full-content {
-                background-color: var(--bg-color);
-                height: 100%;
-                min-height: 95vh;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .wave-box {
-                --size: 10px;
-                --b: 5px;
-                --m: 0.8;
-                --p: calc(var(--m)*var(--size));
-                --R: calc(var(--size)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
-
-                --_g: #0000 calc(99% - var(--b)),#000 calc(101% - var(--b)) 99%,#0000 101%;
-                mask:
-                        radial-gradient(var(--R) at left 50% bottom calc(-1*var(--p)),var(--_g)) calc(50% - 2*var(--size)) calc(50% - var(--size)/2 - var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b)),
-                        radial-gradient(var(--R) at left 50% top calc(-1*var(--p)),var(--_g)) 50% calc(50% + var(--size)/2 + var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b));
-                background: var(--accent-color);
-                height: 15px;
-                width: 45vw;
-                max-width: 75vw;
-                margin: 1vb auto;
-                display: flex;
-                flex-direction: row;
-            }
-
-            i, ul {
-                font-size: var(--contact-font-size);
-                margin-bottom: 0;
-            }
-
-            .contact-list i:hover {
-                color: var(--name-color);
-            }
-
-            a {
-                color: inherit;
-            }
-
-            /*.about-me {*/
-            /*    background: var(--accent-background);*/
-            /*}*/
-
-            .section-title {
-                color: var(--accent-color);
-                margin: 1vb 3vb 1vb 7vb;
-                display: flex;
-                flex-direction: row;
-                font-size: var(--section-title-size);
-            }
-
-            .section-divider {
-                width: 50%;
-            }
-
-            .section-content {
-                margin: 3%;
-                margin-left: 10vb;
-                margin-right: 10vb;
-                color: var(--text-color);
-                font-size: var(--default-font-size);
-            }
-
-            ul {
-                margin-left: 7vb !important;
-                margin-right: 7vb !important;
-            }
-
-            li {
-                margin-bottom: 1vh;
-            }
-
-            li::marker {
-                color: var(--accent-color);
-                content: '\273F';
-            }
-
-            .footer {
-                /*background: var(--accent-background-2);*/
-                color: var(--text-color);
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-            }
-
-            .footer i {
-                font-size: var(--default-font-size);
-            }
-        </style>
     </head>
-
     <body>
         <div class="full-content">
             <h1 class="name">Laura Tyler</h1>
@@ -191,22 +30,49 @@
             <hr class="section-divider">
             <h3 class="section-title">Technical Skills</h3>
                 <ul class="section-content">
-                    <li>Designed and maintained responsive web apps in HTML, CSS, JavaScript, Vue.js</li>
-                    <li>Developed and implemented  RESTful APIs, GraphQL endpoints, and backend systems with Node.js and TypeScript</li>
-                    <li>Conducted testing and debugging using Jest to increase legacy code coverage and ensure high-quality, reliable code</li>
-                    <li>Engineered efficient database schemas and optimized queries with PostgreSQL</li>
-                    <li>Experience with AWS (S3, EC2), Docker, Pulumi, and CI/CD pipelines</li>
-                    <li>Improved metrics and alerting around increased latency and error responses to minimize downtime and enhanced user experience</li>
-                    <li>Mentored junior team members</li>
-                    <li>Proficient with Git and Agile Methodologies</li>
+                    <li><b>Full Stack Proficiency</b>:  Proficient in TypeScript, Node.js, Vue, and PostgreSQL, with extensive experience in developing and optimizing web services to enhance user experience and application performance.</li>
+
+                    <li><b>Innovative Scalability</b>: Spearheaded architectural redesigns that facilitated growth and adaptability, leading to significant improvements in performance and user engagement.</li>
+
+                    <li><b>Collaborative Leadership</b>: Mentored junior developers and improved cross-functional team dynamics, fostering a culture of collaboration that enhanced project outcomes and operational efficiency.</li>
+
+                    <li><b>Agile Transformation</b>: Streamlined development processes to enhance agility and responsiveness, enabling quicker releases and maintaining high standards of quality and efficiency.</li>
+
+                    <li><b>Impactful Solutions</b>: Implemented automated systems and frameworks that significantly increased operational efficiency and data integrity, aligning technology with overarching business goals.</li>
+<!--                    <li>Designed and maintained responsive web apps in HTML, CSS, JavaScript, Vue.js</li>-->
+<!--                    <li>Developed and implemented  RESTful APIs, GraphQL endpoints, and backend systems with Node.js and TypeScript</li>-->
+<!--                    <li>Conducted testing and debugging using Jest to increase legacy code coverage and ensure high-quality, reliable code</li>-->
+<!--                    <li>Engineered efficient database schemas and optimized queries with PostgreSQL</li>-->
+<!--                    <li>Experience with AWS (S3, EC2), Docker, Pulumi, and CI/CD pipelines</li>-->
+<!--                    <li>Improved metrics and alerting around increased latency and error responses to minimize downtime and enhanced user experience</li>-->
+<!--                    <li>Mentored junior team members</li>-->
+<!--                    <li>Proficient with Git and Agile Methodologies</li>-->
                 </ul>
             <hr class="section-divider">
             <!--<h3 class="section-title">Projects (Coming Soon)</h3>
             <hr class="section-divider"> </hr> -->
         </div>
         <div class="footer">
-            <i>Made with &#10084; & whimsy - 2025</i>
-            <br/>
+<!--            <div class="visitor-count">-->
+<!--                <p>Visitor Count: </p>-->
+<!--                <div class="website-counter"/>-->
+<!--            </div>-->
         </div>
+        <div class="visitor-count">Made with &#10084; & whimsy - 2025</div>
     </body>
 </html>
+
+<script>
+    const counterContainer = document.querySelector(".website-counter");
+    let visitCount = localStorage.getItem("page_view");
+
+    // Check if page_view entry is present
+    if (visitCount) {
+        visitCount = Number(visitCount) + 1;
+        localStorage.setItem("page_view", visitCount);
+    } else {
+        visitCount = 1;
+        localStorage.setItem("page_view", 1);
+    }
+    counterContainer.innerHTML = visitCount;
+</script>
