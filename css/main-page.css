@@ -37,6 +37,29 @@ body {
     flex-direction: row;
 }
 
+@media (max-width: 600px) {
+    img {
+        display: none;
+    }
+
+    .profile-image {
+        width: 0px !important;
+    }
+
+    .title-text {
+        width: 100% !important;
+        margin-left: 2vb;
+    }
+
+    .full-content {
+        margin: 1.0rem !important;
+    }
+
+    .header-container {
+        width: 100%;
+    }
+}
+
 .profile-image {
     display: flex;
     flex-direction: row;
@@ -56,6 +79,7 @@ img {
     width: 75%;
     align-items: center;
     justify-content: center;
+    margin-left: 2vb;
 }
 
 .name {
