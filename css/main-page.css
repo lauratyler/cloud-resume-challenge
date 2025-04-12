@@ -6,9 +6,9 @@
     --accent-background: #B5EAEA; /* Muted teal */
     --accent-background-2: #E8B4B8; /* Dusty rose */
     --accent-background-3: #2A2D34; /* Deep Navy */
-    --contact-font-size: 1.5vh;
-    --default-font-size: 1.5vh;
-    --section-title-size: 2vh;
+    --contact-font-size: 1.5rem;
+    --default-font-size: 1.375rem;
+    --section-title-size: 2rem;
     --header-font: "Dancing Script";
 }
 
@@ -21,7 +21,7 @@ html {
 
 body {
     min-height: 98vh;
-    font-family: Arial, sans-serif;
+    font-family: Playfair Display, sans-serif;
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
@@ -32,9 +32,35 @@ body {
     height: 100%;
 }
 
+.header-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-image {
+    display: flex;
+    flex-direction: row;
+    width: 47.3vh;
+    padding-top: 4vh;
+    justify-content: space-around;
+}
+
+img {
+    overflow: hidden;
+    width: 25vh;
+}
+
+.title-text {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+}
+
 .name {
     font-family: var(--header-font), serif;
-    font-size: 3.5vh;
+    font-size: 6.25rem;
     color: var(--name-color);
     justify-content: center;
     display: flex;
@@ -76,6 +102,8 @@ span.line {
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    margin: 5rem;
 }
 
 .wave-box {
@@ -91,9 +119,10 @@ span.line {
             radial-gradient(var(--R) at left 50% top calc(-1*var(--p)),var(--_g)) 50% calc(50% + var(--size)/2 + var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b));
     background: var(--accent-color);
     height: 15px;
-    width: 45vw;
-    max-width: 75vw;
+    width: 55vw;
+    max-width: 55vw;
     margin: 1vb auto;
+    margin-right: 1vw;
     display: flex;
     flex-direction: row;
 }
