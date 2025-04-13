@@ -8,7 +8,7 @@ function App() {
           <div className="full-content">
               <div className="header-container">
                   <div className="profile-image">
-                      <img src="/src/assets/studioGhibliProfile.png"
+                      <img src="/assets/studioGhibliProfile.png"
                            alt="Cartoon portrait of Laura in style of Studio Ghibli"/>
                   </div>
                   <div className="title-text">
