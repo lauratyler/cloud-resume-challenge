@@ -49,4 +49,4 @@ jobs:
       # Upload files to S3
       - name: Upload files to S3
         run: |
-          aws s3 sync dist/ s3://${{ env.CLOUD_CHALLENGE_BUCKET_NAME }} --exclude ".git/*" --delete
+          aws s3 sync dist/ s3://${{ env.CLOUD_CHALLENGE_BUCKET_NAME }} --exclude ".git/*"
