@@ -15,6 +15,17 @@ jobs:
       - name: Git clone the repository
         uses: actions/checkout@v3
 
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the app
+        run: npm run build
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
@@ -34,7 +45,6 @@ jobs:
 
           # Set environment variable from the secret
           echo "CLOUD_CHALLENGE_BUCKET_NAME=$(echo $SECRET_JSON | jq -r '.CLOUD_CHALLENGE_BUCKET_NAME')" >> $GITHUB_ENV
-
 
       # Upload files to S3
       - name: Upload files to S3

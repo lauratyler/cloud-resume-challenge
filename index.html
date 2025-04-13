@@ -1,88 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-        <link rel="icon" href="/src/assets/favicon.png">
-        <link rel="stylesheet" type="text/css" href="./css/main-page.css" media="screen"/>
-        <title>Aura of Laura</title>
-    </head>
-    <body>
-        <div class="full-content">
-            <div class="header-container">
-                <div class="profile-image">
-                    <img src="/src/assets/studioGhibliProfile.png" alt="Cartoon portrait of Laura in style of Studio Ghibli"/>
-                </div>
-                <div class="title-text">
-                    <h1 class="name">Laura Tyler</h1>
-                    <h3 class="tagline">
-                        <span class="line">Bringing ideas to life, </span>
-                        <span class="line"> one line at a time</span>
-                    </h3>
-                    <div class="contact-list">
-                        <a target="_blank" href="mailto:laurabtyler22@gmail.com"><i class="fa fa-envelope"></i></a>
-                        <a target="_blank" href="https://linkedin.com/in/lauratyler22"><i class="fa fa-linkedin-square"></i></a>
-                        <a target="_blank" href="https://github.com/lauratyler"><i class="fa fa-github"></i></a>
-                    </div>
-                    <div class="about-me">
-<!--                        <h3 class="section-title">About Me</h3>-->
-                        <p class="section-content">Hi, I'm Laura - a self-taught developer with a love for storytelling, strong systems, and user empathy.
-                            I blend my background in psychology and business with a deep passion for clean, thoughtful code.
-                            When I'm not coding, you can find me budgeting, baking sourdough, or enjoying nature with my family.
-                        </p>
-                    </div>
-                </div>
-            </div>
-<!--            <div class="wave-box"></div>-->
-            <h3 class="section-title">Technical Skills</h3>
-                <ul class="section-content">
-                    <li><b>Full Stack Proficiency</b>:  Proficient in TypeScript, Node.js, Vue, and PostgreSQL, with extensive experience in developing and optimizing web services to enhance user experience and application performance.</li>
-
-                    <li><b>Innovative Scalability</b>: Spearheaded architectural redesigns that facilitated growth and adaptability, leading to significant improvements in performance and user engagement.</li>
-
-                    <li><b>Collaborative Leadership</b>: Mentored junior developers and improved cross-functional team dynamics, fostering a culture of collaboration that enhanced project outcomes and operational efficiency.</li>
-
-                    <li><b>Agile Transformation</b>: Streamlined development processes to enhance agility and responsiveness, enabling quicker releases and maintaining high standards of quality and efficiency.</li>
-
-                    <li><b>Impactful Solutions</b>: Implemented automated systems and frameworks that significantly increased operational efficiency and data integrity, aligning technology with overarching business goals.</li>
-<!--                    <li>Designed and maintained responsive web apps in HTML, CSS, JavaScript, Vue.js</li>-->
-<!--                    <li>Developed and implemented  RESTful APIs, GraphQL endpoints, and backend systems with Node.js and TypeScript</li>-->
-<!--                    <li>Conducted testing and debugging using Jest to increase legacy code coverage and ensure high-quality, reliable code</li>-->
-<!--                    <li>Engineered efficient database schemas and optimized queries with PostgreSQL</li>-->
-<!--                    <li>Experience with AWS (S3, EC2), Docker, Pulumi, and CI/CD pipelines</li>-->
-<!--                    <li>Improved metrics and alerting around increased latency and error responses to minimize downtime and enhanced user experience</li>-->
-<!--                    <li>Mentored junior team members</li>-->
-<!--                    <li>Proficient with Git and Agile Methodologies</li>-->
-                </ul>
-            <hr class="section-divider">
-            <!--<h3 class="section-title">Projects (Coming Soon)</h3>
-            <hr class="section-divider"> </hr> -->
-        </div>
-        <div class="footer">
-<!--            <div class="visitor-count">-->
-<!--                <p>Visitor Count: </p>-->
-<!--                <div class="website-counter"/>-->
-<!--            </div>-->
-        </div>
-        <div class="visitor-count">Made with &#10084; & whimsy - 2025</div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/src/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/main-page.css" media="screen"/>
+    <title>Aura of Laura</title>  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
-
-<script>
-    const counterContainer = document.querySelector(".website-counter");
-    let visitCount = localStorage.getItem("page_view");
-
-    // Check if page_view entry is present
-    if (visitCount) {
-        visitCount = Number(visitCount) + 1;
-        localStorage.setItem("page_view", visitCount);
-    } else {
-        visitCount = 1;
-        localStorage.setItem("page_view", 1);
-    }
-    counterContainer.innerHTML = visitCount;
-</script>
