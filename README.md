@@ -1,54 +1,43 @@
-# React + TypeScript + Vite
+# Cloud Resume Challenge — Laura Tyler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio and resume site built as part of the [Cloud Resume Challenge (AWS)](https://cloudresumechallenge.dev/docs/the-challenge/aws/).
 
-Currently, two official plugins are available:
+The goal: showcase professional skills while learning AWS, IaC, and serverless architecture hands-on.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Live Site
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Deployed to AWS S3 with CloudFront + custom domain. Pushes to `main` trigger automatic deployment via GitHub Actions (OIDC, no hardcoded credentials).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Layer | Tech |
+|-------|------|
+| Frontend | React 19, TypeScript, Vite 6, React Router v7 |
+| Styling | Plain CSS with CSS variables |
+| Deployment | AWS S3 + GitHub Actions |
+| Backend | AWS Lambda (Node.js 18), DynamoDB, API Gateway v2 |
+| IaC | Terraform (~> AWS 5.92) |
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+---
+
+## Local Setup
+
+**Prerequisites:** Node.js 18+, npm
+
+> **Note:** The frontend lives in `app/` — running `npm run dev` from the repo root won't work (the root `index.html` now points to `app/src/main.tsx` but Vite is not configured at the root level anymore).
+
+```bash
+# 1. Clone the repo
+git clone <your-repo-url>
+cd cloud-resume-challenge/app
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
+npm run dev
 ```

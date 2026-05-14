@@ -152,10 +152,9 @@ a {
           radial-gradient(var(--R) at left 50% top calc(-1*var(--p)),var(--_g)) 50% calc(50% + var(--size)/2 + var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b));
   background: var(--accent-color);
   height: 15px;
-  width: 55vw;
-  max-width: 55vw;
-  margin: 1vb auto;
-  margin-right: 1vw;
+  width: 25rem;
+  max-width: 55%;
+  margin: auto;
   display: flex;
   flex-direction: row;
 }
@@ -187,7 +186,7 @@ i, ul {
   width: 50%;
 }
 
-.about-me .section-content {
+.summary .section-content {
   margin-left: 2vw;
 }
 
@@ -245,6 +244,31 @@ li::marker {
   color: white;
   border-radius: 30px;
   font-size: var(--default-font-size);
+}
+
+.sub-bullet {
+  margin-left: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
 }
 
 /*h1 {*/
@@ -305,6 +329,12 @@ li::marker {
 
   .header-container {
     width: 100%;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
   }
 }
 
