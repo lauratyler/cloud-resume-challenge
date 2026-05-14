@@ -10,7 +10,7 @@ function App() {
           const updatedVisitCount = sessionStorage.getItem('visit-count')
           if (!updatedVisitCount) {
               await updateVisitorCount()
-              sessionStorage.setItem('updated-count', 'true')
+              sessionStorage.setItem('visit-count', 'true')
           }
           await getVisitorCount()
       }
