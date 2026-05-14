@@ -21,10 +21,10 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: cd app && npm install
 
       - name: Build the app
-        run: npm run build
+        run: cd app && npm run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
@@ -49,4 +49,4 @@ jobs:
       # Upload files to S3
       - name: Upload files to S3
         run: |
-          aws s3 sync dist/ s3://${{ env.CLOUD_CHALLENGE_BUCKET_NAME }} --exclude ".git/*"
+          aws s3 sync app/dist/ s3://${{ env.CLOUD_CHALLENGE_BUCKET_NAME }} --exclude ".git/*"
