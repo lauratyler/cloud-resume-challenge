@@ -18,19 +18,18 @@ export default function AboutPage() {
                     <h1 className="name">About Me</h1>
                     <div className="wave-box"></div>
                 </div>
-                {/*<div className="body">*/}
                 <div className="grid-3">
-                    <div className="section-content">
+                    <div className="content-card section-content">
                        <ul><b>Learning</b>
                            {ElementList(learnings)}
                        </ul>
                     </div>
-                    <div className="section-content">
+                    <div className="content-card section-content">
                         <ul><b><a href="https://app.thestorygraph.com/profile/lauratyty">Currently Reading</a></b>
                             {bookList(books)}
                         </ul>
                     </div>
-                    <div className="section-content">
+                    <div className="content-card section-content">
                         <ul><b>Hobbies</b>
                             {ElementList(hobbies)}
                         </ul>

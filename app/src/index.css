@@ -1,17 +1,19 @@
 :root {
-  --bg-color: #FFFAE3; /* Soft cream */
-  --name-color: #F25C54; /* Coral red */
-  --text-color: #333333; /* Deep charcoal */
-  --accent-color: #8BC6EC; /* Light teal */
-  --accent-background: #B5EAEA; /* Muted teal */
-  --accent-background-2: #E8B4B8; /* Dusty rose */
-  --accent-background-3: #2A2D34; /* Deep Navy */
+  --bg-color: #EDE3DA; /* Soft pink-ish */
+  --name-color: #2D4A2D; /* Deep forest green */
+  --text-color: #2A2A2A; /* Deep charcoal */
+  --accent-color: #5C7A5C; /* Sage green */
+  --accent-background: #B8CCB8; /* Misty sage */
+  --accent-background-2: #C8DCCA; /* Soft sage */
+  --card-bg: rgba(240, 234, 266, 0.88);
+  --card-border: rgba(92, 122, 92, 0.25);
   --contact-font-size: 1.5rem;
   --default-font-size: 1.375rem;
   --section-title-size: 2rem;
   --header-font: "Dancing Script";
   line-height: 1.5;
   font-weight: 400;
+
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -27,18 +29,20 @@
 
 html {
   width: 100%;
-  background-color: var(--bg-color);
 }
 
 body {
   height: 99dvh;
   box-sizing: border-box;
   font-family: Playfair Display, sans-serif;
-  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   margin: 2px;
   border: 5px dotted var(--accent-color);
+  background-color: var(--bg-color);
+  background-image: url('../assets/pdwilliammorris-057a-nap.jpg');
+  background-size: 500px 500px;
+  background-repeat: repeat;
 }
 
 #root {
@@ -101,7 +105,6 @@ a {
 }
 
 .full-content {
-  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
 }
@@ -132,6 +135,20 @@ a {
 
 .full-content li {
   margin-bottom: 0.7vh;
+}
+
+/* Containers */
+.content-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(45, 74, 45, 0.12);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .wave-box {
@@ -211,6 +228,10 @@ li::marker {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+
+  a {
+    color: var(--text-color);
+  }
 }
 
 .page-title {
