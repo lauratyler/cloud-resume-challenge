@@ -202,45 +202,6 @@ li::marker {
   content: '\273F';
 }
 
-.footer {
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  margin-top: auto;
-  margin-bottom: 1vh;
-  font-size: var(--default-font-size);
-  justify-content: flex-end;
-}
-
-.footer p {
-  display: flex;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.visitor-count {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-}
-
-.website-counter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-left: 1vb;
-  background-color: var(--accent-color);
-  width: 5vw;
-  color: white;
-  border-radius: 30px;
-  font-size: var(--default-font-size);
-}
-
 .sub-bullet {
   margin-left: 2rem;
 }
@@ -260,6 +221,42 @@ li::marker {
   line-height: normal;
 }
 
+
+/* Footer */
+.footer {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 1vh;
+  font-size: var(--default-font-size);
+  justify-content: flex-end;
+}
+
+.visitor-sticker {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-background-2);
+  border-radius: 12px;
+  padding: 6px 14px 8px;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.12);
+  gap: 1px;
+  margin-top: 6px;
+}
+
+.visitor-sticker__label {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* Grid Chips */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -314,6 +311,7 @@ li::marker {
   }
 }
 
+/* Mobile Work */
 @media (max-width: 600px) {
   body {
     border: none;
