@@ -2,12 +2,6 @@ import Header from '../components/ui/Header.tsx';
 import Footer from '../components/ui/Footer.tsx';
 import { skills } from '../data/data.ts';
 
-function SkillList(list: { title: string, text: string}[]) {
-    return list.map((skill, index) =>
-        <li className="sub-bullet" key={index}><b>{skill.title}</b>: {skill.text}</li>
-    )
-}
-
 export default function HomePage() {
     return (
         <>
@@ -42,9 +36,18 @@ export default function HomePage() {
                     </div>
                 </div>
                 <h3 className="section-title">Technical Skills</h3>
-                <ul className="section-content">
-                    {SkillList(skills)}
-                </ul>
+                <div className="skills-grid">
+                    {skills.map((group) => (
+                        <div className="skill-category" key={group.category}>
+                            <h4 className="skill-category-title">{group.category}</h4>
+                            <div className="skill-chips">
+                                {group.items.map((item) => (
+                                    <span className="skill-chip" key={item}>{item}</span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
                 <hr className="section-divider"/>
             </div>
             <Footer/>

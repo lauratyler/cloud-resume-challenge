@@ -1,28 +1,23 @@
 export const books = [
     {
-        title: "Tiny Humans, Big Emotions",
-        author: "Alyssa Blask Campbell and Lauren Elizabeth Stauble",
-        url: "https://tinyurl.com/2a8zk3vj",
+        title: "Dungeon Crawler Carl Series",
+        author: "Matt Dinniman",
+        url: "https://www.goodreads.com/series/309211-dungeon-crawler-carl",
     },
     {
-        title: "The Women",
-        author: "Kristin Hannah",
-        url: "https://tinyurl.com/2yefnt8t",
+        title: "Anna Karenina",
+        author: "Leo Tolstoy - Translated by Marian Schwartz",
+        url: "https://www.goodreads.com/book/show/21945098-anna-karenina?ac=1&from_search=true&qid=5YoVSgEDl5&rank=1",
     },
     {
-        title: "The Way of Kings",
-        author: "Brandon Sanderson",
-        url: "https://tinyurl.com/39tv8d9p",
-    },
-    {
-        title: "After Evangelicalism: The Path to a New Christianity",
-        author: "David P Gushee",
-        url: "https://tinyurl.com/bd52yt2a",
+        title: "Lord of the Rings Series",
+        author: "J.R.R Tolkien",
+        url: "https://www.goodreads.com/book/show/199143832-j-r-r-tolkien-lord-of-the-rings-series-collection-3-books-set?ref=nav_sb_ss_2_24",
     },
 ]
 
 export const hobbies = [
-    'Crocheting',
+    'Crocheting & Knitting',
     'Sourdough Baking',
     'Running',
     'Cozy Gaming'
@@ -30,42 +25,24 @@ export const hobbies = [
 
 export const learnings = [
     'AWS Architect Solutions Certificate',
-    'Adonis and Domain Driven Design'
+    'golang'
 ]
 
 export const skills = [
     {
-        id: 1,
-        title: 'Full Stack Proficiency',
-        text: `Proficient in TypeScript, Node.js, Vue, and PostgreSQL, with
-            extensive experience in developing and optimizing web services to enhance user experience and
-            application performance.`
+        category: 'Languages',
+        items: ['TypeScript', 'JavaScript', 'Python', 'SQL']
     },
     {
-        id: 2,
-        title: 'Innovative Scalability',
-        text: `Spearheaded architectural redesigns that facilitated growth and
-            adaptability, leading to significant improvements in performance and user engagement.`,
+        category: 'Frontend',
+        items: ['React', 'Vue', 'Vite']
     },
     {
-        id: 3,
-        title: 'Collaborative Leadership',
-        text: `Mentored junior developers and improved cross-functional team
-            dynamics, fostering a culture of collaboration that enhanced project outcomes and operational
-            efficiency.`,
+        category: 'Cloud & AWS',
+        items: ['Lambda', 'S3', 'DynamoDB', 'API Gateway', 'CloudFront', 'Route 53', 'EventBridge']
     },
     {
-        id: 4,
-        title: 'Agile Transformation',
-        text: `Streamlined development processes to enhance agility and
-            responsiveness, enabling quicker releases and maintaining high standards of quality and
-            efficiency.`,
-    },
-    {
-        id: 5,
-        title: 'Impactful Solutions',
-        text: `Implemented automated systems and frameworks that significantly
-            increased operational efficiency and data integrity, aligning technology with overarching business
-            goals.`
-    },
+        category: 'Infrastructure & Tools',
+        items: ['Terraform', 'Pulumi', 'GitHub Actions', 'Node.js', 'PostgreSQL', 'Git']
+    }
 ]
