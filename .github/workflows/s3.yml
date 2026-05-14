@@ -25,6 +25,8 @@ jobs:
 
       - name: Build the app
         run: cd app && npm run build
+        env:
+          VITE_DB_URL: ${{ vars.VITE_DB_URL }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
