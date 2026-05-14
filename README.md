@@ -1,13 +1,11 @@
-## Portfolio Site
+# Cloud Resume Challenge — Laura Tyler
 
-Welcome to the code for the personal portfolio website of Laura Tyler!
+A personal portfolio and resume site built as part of the [Cloud Resume Challenge (AWS)](https://cloudresumechallenge.dev/docs/the-challenge/aws/).
 
-### Description
-This site is built on the guidelines for the 
-[Cloud Resume Challenge - AWS](https://cloudresumechallenge.dev/docs/the-challenge/aws/) and
-is a work in progress. Below is an up to date checklist of my current status - be sure to come
-back for future updates!
+The goal: showcase professional skills while learning AWS, IaC, and serverless architecture hands-on.
 
+---
+## Challenge Progress
 * [ ] AWS Certification (In Progress)
 * [x] HTML
 * [x] CSS
@@ -15,16 +13,50 @@ back for future updates!
 * [x] HTTPS
 * [x] DNS
 * [x] JavaScript - Here is where I went off path by adding React to the project
-* [ ] Database (In Progress)
+* [x] Database
 * [ ] API
 * [ ] Python
 * [ ] Tests
-* [ ] Infrastructure as Code
+* [x] Infrastructure as Code
 * [x] Source Control
 * [x] CI/CD Frontend
 * [ ] CI/CD Backend
 * [ ] Blog Post
 
-### Local Set Up
-* `npm install` to install dependencies
-* `npm run dev` to run the site locally
+---
+
+## Live Site
+
+Deployed to AWS S3 with CloudFront + custom domain. Pushes to `main` trigger automatic deployment via GitHub Actions (OIDC, no hardcoded credentials).
+
+---
+
+## Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| Frontend | React 19, TypeScript, Vite 6, React Router v7 |
+| Styling | Plain CSS with CSS variables |
+| Deployment | AWS S3 + GitHub Actions |
+| Backend | AWS Lambda (Node.js 18), DynamoDB, API Gateway v2 |
+| IaC | Terraform (~> AWS 5.92) |
+
+---
+
+## Local Setup
+
+**Prerequisites:** Node.js 18+, npm
+
+> **Note:** The frontend lives in `app/` — running `npm run dev` from the repo root won't work (the root `index.html` now points to `app/src/main.tsx` but Vite is not configured at the root level anymore).
+
+```bash
+# 1. Clone the repo
+git clone <your-repo-url>
+cd cloud-resume-challenge/app
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
+npm run dev
+```
