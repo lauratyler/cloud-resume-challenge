@@ -5,6 +5,25 @@ A personal portfolio and resume site built as part of the [Cloud Resume Challeng
 The goal: showcase professional skills while learning AWS, IaC, and serverless architecture hands-on.
 
 ---
+## Challenge Progress
+* [ ] AWS Certification (In Progress)
+* [x] HTML
+* [x] CSS
+* [x] Static Website
+* [x] HTTPS
+* [x] DNS
+* [x] JavaScript - Here is where I went off path by adding React to the project
+* [x] Database
+* [ ] API
+* [ ] Python
+* [ ] Tests
+* [x] Infrastructure as Code
+* [x] Source Control
+* [x] CI/CD Frontend
+* [ ] CI/CD Backend
+* [ ] Blog Post
+
+---
 
 ## Live Site
 
