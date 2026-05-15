@@ -1,4 +1,3 @@
-
 const VITE_DB_URL = import.meta.env.VITE_DB_URL
 
 export const getVisitorCount = async (): Promise<number> => {

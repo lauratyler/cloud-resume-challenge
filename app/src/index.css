@@ -32,15 +32,21 @@ html {
 }
 
 body {
-  height: 99dvh;
   box-sizing: border-box;
   font-family: Playfair Display, sans-serif;
   display: flex;
   flex-direction: column;
-  margin: 2px;
-  border: 5px dotted var(--accent-color);
+  margin: 1px;
+  /*border: 5px dotted var(--accent-color);*/
   background-color: var(--bg-color);
-  background-image: url('../assets/pdwilliammorris-057a-nap.jpg');
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/pdwilliammorris-057a-nap-small.png');
   background-size: 500px 500px;
   background-repeat: repeat;
 }
@@ -49,11 +55,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 98dvh;
+  overflow: visible;
 }
 
 .header-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 img {
@@ -66,7 +74,6 @@ img {
   width: 75%;
   align-items: center;
   justify-content: center;
-  margin-left: 2rem;
 }
 
 .name {
@@ -111,12 +118,24 @@ a {
 
 .full-content .profile-image {
   padding-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 75%;
+  justify-content: center;
+
+  span {
+    margin-right: 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .full-content img {
   width: clamp(120px, 25vh, 25vh);
-  max-height: 24vh;
   object-fit: contain;
+  border: 5px dotted var(--accent-color);
 }
 
 .full-content .name {
@@ -162,11 +181,14 @@ a {
   mask:
           radial-gradient(var(--R) at left 50% bottom calc(-1*var(--p)),var(--_g)) calc(50% - 2*var(--size)) calc(50% - var(--size)/2 - var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b)),
           radial-gradient(var(--R) at left 50% top calc(-1*var(--p)),var(--_g)) 50% calc(50% + var(--size)/2 + var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b));
-  background: var(--accent-color);
+  background: var(--name-color);
   height: 15px;
   width: 25rem;
   max-width: 55%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
 }
@@ -228,6 +250,9 @@ li::marker {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 
   a {
     color: var(--text-color);
@@ -282,6 +307,7 @@ li::marker {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: .5rem;
+  justify-items: center;
 }
 
 .skills-grid {
