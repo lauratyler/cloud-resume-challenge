@@ -19,10 +19,10 @@ export default function Footer() {
                 <span className="visitor-sticker__label">
                     {count.toLocaleString()} visitors
                 </span>
-            </div>
-            <span className="visitor-sticker__label">
+                <span className="visitor-sticker__label">
                     Made with &#10084; & whimsy
-            </span>
+                </span>
+            </div>
         </div>
     )
 }

@@ -14,9 +14,9 @@ The goal: showcase professional skills while learning AWS, IaC, and serverless a
 * [x] DNS
 * [x] JavaScript - Here is where I went off path by adding React to the project
 * [x] Database
-* [ ] API
+* [x] API
 * [ ] Python
-* [ ] Tests
+* [x] Tests
 * [x] Infrastructure as Code
 * [x] Source Control
 * [x] CI/CD Frontend
