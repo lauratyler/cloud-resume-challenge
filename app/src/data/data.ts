@@ -31,18 +31,22 @@ export const learnings = [
 export const skills = [
     {
         category: 'Languages',
-        items: ['TypeScript', 'JavaScript', 'Python', 'SQL']
+        items: ['TypeScript', 'JavaScript', 'SQL']
     },
     {
         category: 'Frontend',
-        items: ['React', 'Vue', 'Vite']
+        items: ['React', 'Vue', 'Vite', 'Bootstrap']
     },
     {
-        category: 'Cloud & AWS',
-        items: ['Lambda', 'S3', 'DynamoDB', 'API Gateway', 'CloudFront', 'Route 53', 'EventBridge']
+        category: 'Backend & Data',
+        items: ['Node.js', 'PostgreSQL', 'PostGIS', 'Redis', 'GraphQL', 'REST APIs']
     },
     {
         category: 'Infrastructure & Tools',
-        items: ['Terraform', 'Pulumi', 'GitHub Actions', 'Node.js', 'PostgreSQL', 'Git']
+        items: ['AWS', 'Docker', 'Pulumi', 'GitHub Actions', 'CI/CD', 'Datadog', 'Git']
+    },
+    {
+        category: 'AI Tooling',
+        items: ['Claude Code', 'Cursor', 'Prompt Engineering']
     }
 ]
