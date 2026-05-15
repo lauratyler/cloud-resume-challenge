@@ -14,7 +14,7 @@ export default function AboutPage() {
         <>
             <Header/>
             <div className="full-content">
-                <div className="page-title">
+                <div className="content-card page-title" style={{width: '50%', alignSelf: 'center'}}>
                     <h1 className="name">About Me</h1>
                     <div className="wave-box"></div>
                 </div>
