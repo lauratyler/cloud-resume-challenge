@@ -37,13 +37,6 @@ body {
   flex-direction: column;
   margin: 1px;
   background-color: var(--bg-color);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
   background-image: url('../assets/pdwilliammorris-057a-nap-small.png');
   background-size: 500px 500px;
   background-repeat: repeat;
@@ -157,7 +150,6 @@ a {
 /* Containers */
 .content-card {
   background: var(--card-bg);
-  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
