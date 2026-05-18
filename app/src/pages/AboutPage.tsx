@@ -1,4 +1,3 @@
-import Header from "../components/ui/Header.tsx";
 import Footer from '../components/ui/Footer.tsx';
 import ElementList from '../components/ui/ElementList.tsx';
 import { books, learnings, hobbies } from '../data/data.ts';
@@ -12,7 +11,6 @@ function bookList(list: { title: string, author: string, url: string}[]) {
 export default function AboutPage() {
     return (
         <>
-            <Header/>
             <div className="full-content">
                 <div className="content-card page-title" style={{width: '50%', alignSelf: 'center'}}>
                     <h1 className="name">About Me</h1>

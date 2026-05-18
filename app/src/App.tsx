@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { getVisitorCount, updateVisitorCount } from './services/api'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import Menu from './components/ui/Menu'
 import '@mantine/core/styles.css';
 
 import { MantineProvider } from '@mantine/core';
@@ -23,12 +24,17 @@ function App() {
 
   return <MantineProvider>
     {
-        <Router>
-            <Routes>
-                <Route path="/" element={<HomePage />}/>
-                <Route path="/about" element={<AboutPage />}/>
-            </Routes>
-        </Router>
+        <div className="app-layout">
+            <Router>
+                <Menu/>
+                <div className="main-content">
+                    <Routes>
+                        <Route path="/" element={<HomePage />}/>
+                        <Route path="/about" element={<AboutPage />}/>
+                    </Routes>
+                </div>
+            </Router>
+        </div>
     }
   </MantineProvider>
 

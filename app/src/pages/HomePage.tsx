@@ -1,12 +1,10 @@
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'
-import Header from '../components/ui/Header.tsx';
 import Footer from '../components/ui/Footer.tsx';
 import { skills } from '../data/data.ts';
 
 export default function HomePage() {
     return (
         <>
-            <Header/>
             <div className="full-content">
                 <div className="content-card">
                     <div className="header-container">
