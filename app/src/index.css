@@ -59,6 +59,13 @@ img {
   width: 25vh;
 }
 
+.header-text {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .name {
   font-family: var(--header-font), serif;
   font-size: 6rem;
@@ -72,10 +79,6 @@ img {
   color: var(--name-color);
   margin-top: .75vh;
   margin-bottom: .75vh;
-}
-
-span.line {
-  display: inline-block;
 }
 
 .contact-list {
@@ -107,13 +110,6 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
-  span {
-    margin-right: 1rem;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 .full-content img {
@@ -185,12 +181,6 @@ i, ul {
   color: var(--name-color);
 }
 
-.about-me {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .section-title {
   color: var(--name-color);
   margin: 1vw;
@@ -199,15 +189,7 @@ i, ul {
   font-size: var(--section-title-size);
 }
 
-.section-divider {
-  width: 50%;
-}
-
-.summary .section-content {
-  margin-left: 2vw;
-}
-
-.section-content {
+p {
   display: flex;
   flex-direction: column;
   width: 90%;

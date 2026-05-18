@@ -24,3 +24,15 @@ export const updateVisitorCount = async() => {
         };
     }
 };
+
+export const getResume = async () => {
+    try {
+        return fetch(VITE_DB_URL + '/docs/resume.pdf')
+    } catch (error) {
+        console.error(error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Something went wrong' })
+        };
+    }
+}

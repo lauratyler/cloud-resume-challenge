@@ -1,3 +1,11 @@
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'
+
+export const contactLinks = [
+    { href: 'mailto:laurabtyler22@gmail.com', icon: FaEnvelope, label: 'Email' },
+    { href: 'https://linkedin.com/in/lauratyler22', icon: FaLinkedin, label: 'LinkedIn' },
+    { href: 'https://github.com/lauratyler', icon: FaGithub, label: 'GitHub' },
+]
+
 export const books = [
     {
         title: "Dungeon Crawler Carl Series",
