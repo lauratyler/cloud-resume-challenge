@@ -108,14 +108,9 @@ resource "aws_s3_bucket" "portfolio_bucket" {
   bucket = "lauratyler-prod-portfolio-997688109736"
 }
 
-resource "aws_s3_object" "docs_directory" {
-  bucket = aws_s3_bucket.portfolio_bucket.id
-  key    = "docs/"
-}
-
 resource "aws_apigatewayv2_route" "get_docs" {
   api_id    = aws_apigatewayv2_api.http_api.id
-  route_key = "GET /docs"
+  route_key = "GET /docs/resume.pdf"
   target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
 }
 
@@ -127,7 +122,7 @@ resource "aws_iam_policy" "s3_policy" {
     Statement = [{
       Effect   = "Allow"
       Action   = ["s3:GetObject"]
-      Resource = "arn:aws:s3:::lauratyler-prod-portfolio-997688109736/docs/*"
+      Resource = "arn:aws:s3:::lauratyler-prod-portfolio-997688109736/docs/resume.pdf"
     }]
   })
 }

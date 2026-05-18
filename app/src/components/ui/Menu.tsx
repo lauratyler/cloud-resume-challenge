@@ -5,7 +5,8 @@ import { useNavigate, useLocation } from 'react-router-dom'
 
 import {
     FaUser,
-    FaHome
+    FaHome,
+    FaFile
 } from 'react-icons/fa';
 
 function MobileBurger() {
@@ -20,6 +21,7 @@ function MobileBurger() {
                 <Menu.Dropdown>
                     <Menu.Item onClick={() => { navigate('/'); close(); }}>Home</Menu.Item>
                     <Menu.Item onClick={() => { navigate('/about'); close(); }}>About</Menu.Item>
+                    <Menu.Item onClick={() => { navigate('/resume'); close(); }}>Resume</Menu.Item>
                 </Menu.Dropdown>
             </Menu>
         </div>
@@ -36,6 +38,7 @@ interface NavbarLinkProps {
 const routes = [
     { icon: FaHome, label: 'Home', path: '/' },
     { icon: FaUser, label: 'About' , path: '/about'},
+    { icon: FaFile, label: 'Resume' , path: '/resume'},
     // { icon: IconGauge, label: 'Dashboard' },
     // { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
     // { icon: IconCalendarStats, label: 'Releases' },

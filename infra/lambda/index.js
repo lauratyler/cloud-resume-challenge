@@ -9,7 +9,7 @@ exports.handler = async (event) => {
             return await visitorCount(event)
         }
 
-        if (path === "/docs") {
+        if (path === "/docs/resume.pdf") {
             return await docs(event)
         }
 

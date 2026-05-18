@@ -25,14 +25,8 @@ export const updateVisitorCount = async() => {
     }
 };
 
-export const getResume = async () => {
-    try {
-        return fetch(VITE_DB_URL + '/docs/resume.pdf')
-    } catch (error) {
-        console.error(error);
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: 'Something went wrong' })
-        };
-    }
+export const getResume = async (): Promise<Blob> => {
+    const res = await fetch(VITE_DB_URL + '/docs/resume.pdf')
+    if (!res.ok) throw new Error(res.statusText)
+    return res.blob()
 }

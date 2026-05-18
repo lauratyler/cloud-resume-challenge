@@ -16,7 +16,7 @@
   font-weight: 400;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   overflow: visible;
   flex-wrap: wrap;
 }
@@ -253,7 +253,8 @@ li::marker {
   border-radius: 4px;
 
   &:hover {
-    background-color: var(--card-bg);
+    background-color: var(--accent-background);
+    color: var(--accent-color);
   }
 
   &[data-active] {
@@ -263,6 +264,37 @@ li::marker {
       color: var(--name-color);
     }
   }
+}
+
+.resume-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.resume-download-btn {
+  background-color: var(--name-color);
+  color: white;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  max-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.resume-download-btn:hover { opacity: 0.85; }
+
+.resume-viewer {
+  width: 100%;
+  max-width: 850px;
+  height: 80vh;
+  border-radius: 8px;
 }
 
 /* Footer */
