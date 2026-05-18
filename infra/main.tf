@@ -60,12 +60,12 @@ resource "aws_lambda_function" "visitor_lambda" {
 }
 
 resource "aws_apigatewayv2_api" "http_api" {
-  name          = "visitor-api"
+  name          = "portfolio-api"
   protocol_type = "HTTP"
 
   cors_configuration {
-    allow_origins = ["https://lauratyler.dev"]
-    allow_methods = ["GET"]
+    allow_origins = ["https://lauratyler.dev", "http://localhost:5173"]
+    allow_methods = ["GET", "POST"]
     allow_headers = ["Content-Type"]
   }
 }
@@ -83,6 +83,12 @@ resource "aws_apigatewayv2_route" "get_count" {
   target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
 }
 
+resource "aws_apigatewayv2_route" "increase_count" {
+  api_id    = aws_apigatewayv2_api.http_api.id
+  route_key = "POST /visitor-count"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
+}
+
 resource "aws_apigatewayv2_stage" "default" {
   api_id      = aws_apigatewayv2_api.http_api.id
   name        = "$default"
@@ -96,4 +102,32 @@ resource "aws_lambda_permission" "api_permission" {
   principal     = "apigateway.amazonaws.com"
 
   source_arn = "${aws_apigatewayv2_api.http_api.execution_arn}/*/*"
+}
+
+resource "aws_s3_bucket" "portfolio_bucket" {
+  bucket = "lauratyler-prod-portfolio-997688109736"
+}
+
+resource "aws_apigatewayv2_route" "get_docs" {
+  api_id    = aws_apigatewayv2_api.http_api.id
+  route_key = "GET /docs/resume.pdf"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
+}
+
+resource "aws_iam_policy" "s3_policy" {
+  name = "PortfolioBucketReadPolicy"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect   = "Allow"
+      Action   = ["s3:GetObject"]
+      Resource = "arn:aws:s3:::lauratyler-prod-portfolio-997688109736/docs/resume.pdf"
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "attach_s3_policy" {
+  role       = aws_iam_role.lambda_role.name
+  policy_arn = aws_iam_policy.s3_policy.arn
 }

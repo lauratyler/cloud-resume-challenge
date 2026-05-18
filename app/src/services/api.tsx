@@ -24,3 +24,9 @@ export const updateVisitorCount = async() => {
         };
     }
 };
+
+export const getResume = async (): Promise<Blob> => {
+    const res = await fetch(VITE_DB_URL + '/docs/resume.pdf')
+    if (!res.ok) throw new Error(res.statusText)
+    return res.blob()
+}

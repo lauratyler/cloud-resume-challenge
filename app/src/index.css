@@ -11,23 +11,29 @@
   --default-font-size: 1.375rem;
   --section-title-size: 2rem;
   --header-font: "Dancing Script";
+  --navbar-width: 8dvh;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   display: flex;
   flex-direction: column;
+  overflow: visible;
+  flex-wrap: wrap;
 }
 
-html {
-  width: 100%;
+.app-layout {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 100dvh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 body {
@@ -40,13 +46,7 @@ body {
   background-image: url('../assets/pdwilliammorris-057a-nap-small.png');
   background-size: 500px 500px;
   background-repeat: repeat;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
   min-height: 100dvh;
-  overflow: visible;
 }
 
 .header-container {
@@ -59,12 +59,11 @@ img {
   width: 25vh;
 }
 
-.title-text {
+.header-text {
+  margin-left: 2rem;
   display: flex;
   flex-direction: column;
-  width: 75%;
   align-items: center;
-  justify-content: center;
 }
 
 .name {
@@ -80,10 +79,6 @@ img {
   color: var(--name-color);
   margin-top: .75vh;
   margin-bottom: .75vh;
-}
-
-span.line {
-  display: inline-block;
 }
 
 .contact-list {
@@ -105,6 +100,8 @@ a {
 .full-content {
   display: flex;
   flex-direction: column;
+  width: 90%;
+  justify-items: center;
 }
 
 .full-content .profile-image {
@@ -112,15 +109,7 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 75%;
   justify-content: center;
-
-  span {
-    margin-right: 1rem;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 .full-content img {
@@ -192,29 +181,15 @@ i, ul {
   color: var(--name-color);
 }
 
-.about-me {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .section-title {
-  color: var(--accent-color);
+  color: var(--name-color);
   margin: 1vw;
   display: flex;
   flex-direction: row;
   font-size: var(--section-title-size);
 }
 
-.section-divider {
-  width: 50%;
-}
-
-.summary .section-content {
-  margin-left: 2vw;
-}
-
-.section-content {
+p {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -235,20 +210,6 @@ li::marker {
   margin-left: 2rem;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-
-  a {
-    color: var(--text-color);
-  }
-}
-
 .page-title {
   display: flex;
   flex-direction: column;
@@ -257,6 +218,84 @@ li::marker {
   line-height: normal;
 }
 
+/* Nav Bar */
+.navbar {
+  width: var(--navbar-width);
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid transparent var(--card-border);
+  background-color: rgb(240, 234, 266);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbarMain {
+  margin-top: 1rem;
+  border-color: var(--bg-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.link {
+  width: 5dvh;
+  height: 5dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-color);
+  background-color: white;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1.5px solid var(--accent-color);
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--accent-background);
+    color: var(--accent-color);
+  }
+
+  &[data-active] {
+    &,
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--name-color);
+    }
+  }
+}
+
+.resume-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.resume-download-btn {
+  background-color: var(--name-color);
+  color: white;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  max-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.resume-download-btn:hover { opacity: 0.85; }
+
+.resume-viewer {
+  width: 100%;
+  max-width: 850px;
+  height: 80vh;
+  border-radius: 8px;
+}
 
 /* Footer */
 .footer {
@@ -269,6 +308,7 @@ li::marker {
   margin-bottom: 1vh;
   font-size: var(--default-font-size);
   justify-content: flex-end;
+  width: 100%;
 }
 
 .visitor-sticker {
@@ -335,41 +375,18 @@ li::marker {
   font-size: 0.875rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 /* Mobile Work */
 @media (max-width: 600px) {
-  body {
-    border: none;
-  }
-
   img {
     display: none;
   }
 
-  .profile-image {
-    width: 0 !important;
-  }
-
   .title-text {
-    width: 100% !important;
     margin-left: 2vb;
-  }
-
-
-  .header-container {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .grid-3 {
@@ -381,5 +398,19 @@ li::marker {
   .skills-grid {
     grid-template-columns: 1fr;
   }
-}
 
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 1000;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
