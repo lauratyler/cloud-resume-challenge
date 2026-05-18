@@ -3,7 +3,7 @@ import Footer from '../components/ui/Footer.tsx';
 import { getResume } from "../services/api.tsx";
 
 export default function ResumePage() {
-    const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+    const [pdfUrl, setPdfUrl] = useState<string | undefined>(undefined)
     const [error, setError] = useState(false);
 
     useEffect(() => {

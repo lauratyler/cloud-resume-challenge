@@ -39,11 +39,6 @@ const routes = [
     { icon: FaHome, label: 'Home', path: '/' },
     { icon: FaUser, label: 'About' , path: '/about'},
     { icon: FaFile, label: 'Resume' , path: '/resume'},
-    // { icon: IconGauge, label: 'Dashboard' },
-    // { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
-    // { icon: IconCalendarStats, label: 'Releases' },
-    // { icon: IconFingerprint, label: 'Security' },
-    // { icon: IconSettings, label: 'Settings' },
 ];
 
 function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
