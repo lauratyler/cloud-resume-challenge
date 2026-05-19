@@ -51,7 +51,7 @@ Deployed to AWS S3 with CloudFront + custom domain. Pushes to `main` trigger aut
 
 ```bash
 # 1. Clone the repo
-git clone <your-repo-url>
+git clone
 cd cloud-resume-challenge/app
 
 # 2. Install dependencies

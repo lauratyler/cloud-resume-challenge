@@ -17,13 +17,13 @@ export const updateVisitorCount = async() => {
         // Increment counter
         return fetch(VITE_DB_URL + '/visitor-count', { method: 'POST' })
     } catch (error) {
-        console.error(error);
+        console.error(error)
         return {
             statusCode: 500,
             body: JSON.stringify({ error: 'Something went wrong' })
-        };
+        }
     }
-};
+}
 
 export const getResume = async (): Promise<Blob> => {
     const res = await fetch(VITE_DB_URL + '/docs/resume.pdf')

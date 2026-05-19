@@ -1,7 +1,7 @@
-import Footer from '../components/ui/Footer.tsx';
-import ProfileHeader from '../components/ui/ProfileHeader.tsx';
-import Bio from '../components/ui/Bio.tsx';
-import SkillsGrid from "../components/ui/SkillsGrid.tsx";
+import Footer from '../components/ui/Footer.tsx'
+import ProfileHeader from '../components/ui/ProfileHeader.tsx'
+import Bio from '../components/ui/Bio.tsx'
+import SkillsGrid from "../components/ui/SkillsGrid.tsx"
 
 export default function HomePage() {
     return (

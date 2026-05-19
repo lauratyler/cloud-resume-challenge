@@ -131,3 +131,36 @@ resource "aws_iam_role_policy_attachment" "attach_s3_policy" {
   role       = aws_iam_role.lambda_role.name
   policy_arn = aws_iam_policy.s3_policy.arn
 }
+
+
+resource "aws_acm_certificate" "api_cert" {
+  domain_name       = "api.lauratyler.dev"
+  validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_acm_certificate_validation" "api_cert" {
+  certificate_arn         = aws_acm_certificate.api_cert.arn
+  validation_record_fqdns = [for r in aws_acm_certificate.api_cert.domain_validation_options : r.resource_record_name]
+}
+
+resource "aws_apigatewayv2_domain_name" "api_domain" {
+  domain_name = "api.lauratyler.dev"
+
+  domain_name_configuration {
+    certificate_arn = aws_acm_certificate.api_cert.arn
+    endpoint_type   = "REGIONAL"
+    security_policy = "TLS_1_2"
+  }
+
+  depends_on = [aws_acm_certificate_validation.api_cert]
+}
+
+resource "aws_apigatewayv2_api_mapping" "api_mapping" {
+  api_id      = aws_apigatewayv2_api.http_api.id
+  domain_name = aws_apigatewayv2_domain_name.api_domain.id
+  stage       = aws_apigatewayv2_stage.default.id
+}

@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react";
-import Footer from '../components/ui/Footer.tsx';
-import { getResume } from "../services/api.tsx";
+import { useEffect, useState } from "react"
+import Footer from '../components/ui/Footer.tsx'
+import { getResume } from "../services/api.tsx"
 
 export default function ResumePage() {
     const [pdfUrl, setPdfUrl] = useState<string | undefined>(undefined)
-    const [error, setError] = useState(false);
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         const fetchResume = async () => {
             try {
-                const blob = await getResume();
-                setPdfUrl(URL.createObjectURL(blob));
+                const blob = await getResume()
+                setPdfUrl(URL.createObjectURL(blob))
             } catch {
-                setError(true);
+                setError(true)
             }
-        };
-        fetchResume();
+        }
+        fetchResume()
 
         // cleanup object URL on unmount
-        return () => { if (pdfUrl) URL.revokeObjectURL(pdfUrl); };
-    }, []);
+        return () => { if (pdfUrl) URL.revokeObjectURL(pdfUrl) }
+    }, [pdfUrl])
 
     return (
         <>
@@ -47,5 +47,5 @@ export default function ResumePage() {
             </div>
             <Footer />
         </>
-    );
+    )
 }

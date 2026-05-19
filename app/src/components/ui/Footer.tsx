@@ -1,18 +1,8 @@
-import { useEffect, useState } from 'react'
-import { getVisitorCount } from '../../services/api'
+import { useContext } from 'react'
+import { VisitorCountContext } from '../contexts/VisitorCountContext.tsx'
 
 export default function Footer() {
-    const [count, setCount] = useState(0)
-
-    useEffect(() => {
-        const fetchCount = async () => {
-            const data = await getVisitorCount()
-            setCount(data)
-        }
-
-        fetchCount()
-    }, [])
-
+    const count = useContext(VisitorCountContext)
     return (
         <div className="footer">
             <div className="visitor-sticker">
