@@ -1,6 +1,6 @@
-import Footer from '../components/ui/Footer.tsx';
-import ElementList from '../components/ui/ElementList.tsx';
-import { books, learnings, hobbies } from '../data/data.ts';
+import Footer from '../components/ui/Footer.tsx'
+import ElementList from '../components/ui/ElementList.tsx'
+import { books, learnings, hobbies } from '../data/data.ts'
 
 function bookList(list: { title: string, author: string, url: string}[]) {
     return list.map((book, index) =>
