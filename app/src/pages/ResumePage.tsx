@@ -7,19 +7,21 @@ export default function ResumePage() {
     const [error, setError] = useState(false)
 
     useEffect(() => {
+        let blobUrl: string | undefined
+
         const fetchResume = async () => {
             try {
                 const blob = await getResume()
-                setPdfUrl(URL.createObjectURL(blob))
+                blobUrl = URL.createObjectURL(blob)
+                setPdfUrl(blobUrl)
             } catch {
                 setError(true)
             }
         }
         fetchResume()
 
-        // cleanup object URL on unmount
-        return () => { if (pdfUrl) URL.revokeObjectURL(pdfUrl) }
-    }, [pdfUrl])
+        return () => { if (blobUrl) URL.revokeObjectURL(blobUrl) }
+    }, [])
 
     return (
         <>
